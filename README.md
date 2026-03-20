@@ -245,7 +245,7 @@ The **`InsuranceOntology_AutoGen`** ontology maps the insurance domain into a fo
 <br>
 
 <p align="center">
-  <img src=".imgs/entity_relationship_overview.svg" alt="Entity relationship overview" width="780" />
+  <img src="entity_relationship_overview.svg" alt="Entity relationship overview" width="780" />
 </p>
 
 > See [`schemas/ontology.md`](schemas/ontology.md) for full field-level documentation and relationship diagram.
