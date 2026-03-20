@@ -1,0 +1,101 @@
+table asset_inspections
+	lineageTag: a1b2c3d4-5678-9012-abcd-ef0123456789
+	sourceLineageTag: [dbo].[asset_inspections]
+
+	column inspection_id
+		dataType: string
+		lineageTag: b2c3d4e5-6789-0123-bcde-f01234567890
+		sourceLineageTag: inspection_id
+		summarizeBy: none
+		sourceColumn: inspection_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column asset_id
+		dataType: string
+		lineageTag: c3d4e5f6-7890-1234-cdef-012345678901
+		sourceLineageTag: asset_id
+		summarizeBy: none
+		sourceColumn: asset_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column office_id
+		dataType: string
+		lineageTag: d4e5f6a7-8901-2345-defa-123456789012
+		sourceLineageTag: office_id
+		summarizeBy: none
+		sourceColumn: office_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column inspection_type
+		dataType: string
+		lineageTag: e5f6a7b8-9012-3456-efab-234567890123
+		sourceLineageTag: inspection_type
+		summarizeBy: none
+		sourceColumn: inspection_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: f6a7b8c9-0123-4567-fabc-345678901234
+		sourceLineageTag: status
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column scheduled_date
+		dataType: string
+		lineageTag: a7b8c9d0-1234-5678-abcd-456789012345
+		sourceLineageTag: scheduled_date
+		summarizeBy: none
+		sourceColumn: scheduled_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column completed_date
+		dataType: string
+		lineageTag: b8c9d0e1-2345-6789-bcde-567890123456
+		sourceLineageTag: completed_date
+		summarizeBy: none
+		sourceColumn: completed_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column appraised_value
+		dataType: double
+		lineageTag: c9d0e1f2-3456-7890-cdef-678901234567
+		sourceLineageTag: appraised_value
+		summarizeBy: sum
+		sourceColumn: appraised_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column inspector_notes
+		dataType: string
+		lineageTag: d0e1f2a3-4567-8901-defa-789012345678
+		sourceLineageTag: inspector_notes
+		summarizeBy: none
+		sourceColumn: inspector_notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column condition_rating
+		dataType: string
+		lineageTag: e1f2a3b4-5678-9012-efab-890123456789
+		sourceLineageTag: condition_rating
+		summarizeBy: none
+		sourceColumn: condition_rating
+
+		annotation SummarizationSetBy = Automatic
+
+	partition asset_inspections = entity
+		mode: directLake
+		source
+			entityName: asset_inspections
+			expressionSource: 'DirectLake - lh_insurance'

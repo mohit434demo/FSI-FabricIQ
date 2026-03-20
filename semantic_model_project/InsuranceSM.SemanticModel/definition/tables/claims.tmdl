@@ -1,0 +1,171 @@
+table claims
+	lineageTag: db7a2f96-d893-40e1-a5e1-6a0edb0714c2
+	sourceLineageTag: [dbo].[claims]
+
+	column claim_id
+		dataType: string
+		lineageTag: aa14fe14-811f-4734-bc36-7fdbb8b7380e
+		sourceLineageTag: claim_id
+		summarizeBy: none
+		sourceColumn: claim_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_number
+		dataType: string
+		lineageTag: 3428b485-ea11-40ef-9ddb-e91218c8e1e2
+		sourceLineageTag: claim_number
+		summarizeBy: none
+		sourceColumn: claim_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column policy_id
+		dataType: string
+		lineageTag: cb8062cb-e045-4c93-abc8-ce6d363a57c1
+		sourceLineageTag: policy_id
+		summarizeBy: none
+		sourceColumn: policy_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column policyholder_id
+		dataType: string
+		lineageTag: 7ba301c6-017e-44ae-b3bc-a15acf3df6d4
+		sourceLineageTag: policyholder_id
+		summarizeBy: none
+		sourceColumn: policyholder_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column asset_id
+		dataType: string
+		lineageTag: 5fcc21d0-3849-4c51-b07d-ab811be04dd4
+		sourceLineageTag: asset_id
+		summarizeBy: none
+		sourceColumn: asset_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column adjuster_id
+		dataType: string
+		lineageTag: c066daff-1e37-4cde-8ccb-e9b6fadbe262
+		sourceLineageTag: adjuster_id
+		summarizeBy: none
+		sourceColumn: adjuster_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column office_id
+		dataType: string
+		lineageTag: a35a1a8b-a9f3-4064-ac02-c3056c2ab82b
+		sourceLineageTag: office_id
+		summarizeBy: none
+		sourceColumn: office_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_type
+		dataType: string
+		lineageTag: 418669a3-e57e-4a20-8c26-cd192e938a5d
+		sourceLineageTag: claim_type
+		summarizeBy: none
+		sourceColumn: claim_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: d371dec9-9d60-487d-a405-cc6f1f62b9ea
+		sourceLineageTag: description
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column incident_date
+		dataType: string
+		lineageTag: d262a901-62f4-4177-a6cc-085b34134ae3
+		sourceLineageTag: incident_date
+		summarizeBy: none
+		sourceColumn: incident_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column filed_date
+		dataType: string
+		lineageTag: 01512b16-d585-4596-8ca3-21f64eb4216f
+		sourceLineageTag: filed_date
+		summarizeBy: none
+		sourceColumn: filed_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: e7746e43-0c91-4ffe-8644-892685bc88f9
+		sourceLineageTag: status
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column estimated_loss
+		dataType: double
+		lineageTag: f429152a-b9ba-4a23-80b4-16f8960b3121
+		sourceLineageTag: estimated_loss
+		summarizeBy: sum
+		sourceColumn: estimated_loss
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column approved_amount
+		dataType: double
+		lineageTag: 6740ac51-626e-4883-a63f-08d4d80bbb8c
+		sourceLineageTag: approved_amount
+		summarizeBy: sum
+		sourceColumn: approved_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column priority
+		dataType: string
+		lineageTag: 0ff0de4a-6ab9-49ed-90c3-adef14aff54c
+		sourceLineageTag: priority
+		summarizeBy: none
+		sourceColumn: priority
+
+		annotation SummarizationSetBy = Automatic
+
+	column incident_latitude
+		dataType: double
+		lineageTag: 411a9c97-95a6-41e8-b925-df0bc4c86124
+		sourceLineageTag: incident_latitude
+		summarizeBy: sum
+		sourceColumn: incident_latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column incident_longitude
+		dataType: double
+		lineageTag: dc073fa7-e0fe-42d9-a49f-9b73e2414b6f
+		sourceLineageTag: incident_longitude
+		summarizeBy: sum
+		sourceColumn: incident_longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition claims = entity
+		mode: directLake
+		source
+			entityName: claims
+			expressionSource: 'DirectLake - lh_insurance'
+

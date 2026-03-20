@@ -1,0 +1,176 @@
+<svg width="100%" viewBox="-10 0 810 700" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .th { font-size: 14px; font-weight: 500; }
+    .ts { font-size: 12px; font-weight: 400; }
+    .title { font-size: 16px; font-weight: 500; }
+    .arr { stroke: #73726c; stroke-width: 0.5; }
+
+    /* Light mode defaults */
+    .fill-gray rect { fill: #F1EFE8; stroke: #5F5E5A; }
+    .fill-gray .th { fill: #444441; }
+    .fill-gray .ts { fill: #5F5E5A; }
+
+    .fill-teal rect { fill: #E1F5EE; stroke: #0F6E56; }
+    .fill-teal .th { fill: #085041; }
+    .fill-teal .ts { fill: #0F6E56; }
+
+    .fill-coral rect { fill: #FAECE7; stroke: #993C1D; }
+    .fill-coral .th { fill: #712B13; }
+    .fill-coral .ts { fill: #993C1D; }
+
+    .fill-purple rect { fill: #EEEDFE; stroke: #534AB7; }
+    .fill-purple .th { fill: #3C3489; }
+    .fill-purple .ts { fill: #534AB7; }
+
+    .fill-blue rect { fill: #E6F1FB; stroke: #185FA5; }
+    .fill-blue .th { fill: #0C447C; }
+    .fill-blue .ts { fill: #185FA5; }
+
+    .fill-amber rect { fill: #FAEEDA; stroke: #854F0B; }
+    .fill-amber .th { fill: #633806; }
+    .fill-amber .ts { fill: #854F0B; }
+
+    .label { fill: #5F5E5A; }
+    .title-text { fill: #2C2C2A; }
+
+    @media (prefers-color-scheme: dark) {
+      .fill-gray rect { fill: #444441; stroke: #B4B2A9; }
+      .fill-gray .th { fill: #F1EFE8; }
+      .fill-gray .ts { fill: #D3D1C7; }
+
+      .fill-teal rect { fill: #085041; stroke: #5DCAA5; }
+      .fill-teal .th { fill: #E1F5EE; }
+      .fill-teal .ts { fill: #9FE1CB; }
+
+      .fill-coral rect { fill: #712B13; stroke: #F0997B; }
+      .fill-coral .th { fill: #FAECE7; }
+      .fill-coral .ts { fill: #F5C4B3; }
+
+      .fill-purple rect { fill: #3C3489; stroke: #AFA9EC; }
+      .fill-purple .th { fill: #EEEDFE; }
+      .fill-purple .ts { fill: #CECBF6; }
+
+      .fill-blue rect { fill: #0C447C; stroke: #85B7EB; }
+      .fill-blue .th { fill: #E6F1FB; }
+      .fill-blue .ts { fill: #B5D4F4; }
+
+      .fill-amber rect { fill: #633806; stroke: #FAC775; }
+      .fill-amber .th { fill: #FAEEDA; }
+      .fill-amber .ts { fill: #FAC775; }
+
+      .arr { stroke: #9c9a92; }
+      .label { fill: #B4B2A9; }
+      .title-text { fill: #F1EFE8; }
+    }
+  </style>
+</defs>
+
+<!-- Title -->
+<text class="title title-text" x="395" y="28" text-anchor="middle" dominant-baseline="central">Entity relationship overview</text>
+
+<!-- ── ENTITY BOXES ── -->
+
+<!-- Office (top-left) -->
+<g class="fill-gray">
+  <rect x="40" y="70" width="140" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="110" y="90" text-anchor="middle" dominant-baseline="central">Office</text>
+  <text class="ts" x="110" y="108" text-anchor="middle" dominant-baseline="central">Regional locations</text>
+</g>
+
+<!-- Adjuster (top-center) -->
+<g class="fill-teal">
+  <rect x="320" y="70" width="140" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="390" y="90" text-anchor="middle" dominant-baseline="central">Adjuster</text>
+  <text class="ts" x="390" y="108" text-anchor="middle" dominant-baseline="central">Evaluates claims</text>
+</g>
+
+<!-- Policyholder (top-right) -->
+<g class="fill-purple">
+  <rect x="600" y="70" width="140" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="670" y="90" text-anchor="middle" dominant-baseline="central">Policyholder</text>
+  <text class="ts" x="670" y="108" text-anchor="middle" dominant-baseline="central">Insured party</text>
+</g>
+
+<!-- InsuredAsset (middle-left) -->
+<g class="fill-blue">
+  <rect x="40" y="260" width="140" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="110" y="280" text-anchor="middle" dominant-baseline="central">InsuredAsset</text>
+  <text class="ts" x="110" y="298" text-anchor="middle" dominant-baseline="central">Covered property</text>
+</g>
+
+<!-- Claim (center) -->
+<g class="fill-coral">
+  <rect x="320" y="260" width="140" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="390" y="280" text-anchor="middle" dominant-baseline="central">Claim</text>
+  <text class="ts" x="390" y="298" text-anchor="middle" dominant-baseline="central">Filed claims</text>
+</g>
+
+<!-- Policy (middle-right) -->
+<g class="fill-purple">
+  <rect x="600" y="260" width="140" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="670" y="280" text-anchor="middle" dominant-baseline="central">Policy</text>
+  <text class="ts" x="670" y="298" text-anchor="middle" dominant-baseline="central">Coverage terms</text>
+</g>
+
+<!-- ClaimEvent (bottom-center) -->
+<g class="fill-amber">
+  <rect x="320" y="510" width="140" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="390" y="530" text-anchor="middle" dominant-baseline="central">ClaimEvent</text>
+  <text class="ts" x="390" y="548" text-anchor="middle" dominant-baseline="central">Lifecycle events</text>
+</g>
+
+<!-- AssetInspection (bottom-left) -->
+<g class="fill-blue">
+  <rect x="40" y="510" width="160" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="120" y="530" text-anchor="middle" dominant-baseline="central">AssetInspection</text>
+  <text class="ts" x="120" y="548" text-anchor="middle" dominant-baseline="central">Field inspections</text>
+</g>
+
+<!-- ── RELATIONSHIPS (10) ── -->
+
+<!-- 1. AdjusterAtOffice: Adjuster → Office -->
+<line x1="320" y1="98" x2="180" y2="98" class="arr" marker-end="url(#arrow)"/>
+<text class="ts label" x="250" y="88" text-anchor="middle">operates from</text>
+
+<!-- 2. ClaimAssignedToAdjuster: Claim → Adjuster -->
+<line x1="370" y1="260" x2="370" y2="126" class="arr" marker-end="url(#arrow)"/>
+<text class="ts label" x="362" y="198" text-anchor="end">assigned to</text>
+
+<!-- 3. ClaimUnderPolicy: Claim → Policy -->
+<line x1="460" y1="288" x2="600" y2="288" class="arr" marker-end="url(#arrow)"/>
+<text class="ts label" x="530" y="278" text-anchor="middle">filed against</text>
+
+<!-- 4. PolicyCoversPolicyholder: Policy → Policyholder -->
+<line x1="670" y1="260" x2="670" y2="126" class="arr" marker-end="url(#arrow)"/>
+<text class="ts label" x="678" y="198" text-anchor="start">belongs to</text>
+
+<!-- 5. ClaimInvolvesAsset: Claim → InsuredAsset -->
+<line x1="320" y1="288" x2="180" y2="288" class="arr" marker-end="url(#arrow)"/>
+<text class="ts label" x="250" y="278" text-anchor="middle">involves asset</text>
+
+<!-- 6. ClaimEventForClaim: ClaimEvent → Claim -->
+<line x1="390" y1="510" x2="390" y2="316" class="arr" marker-end="url(#arrow)"/>
+<text class="ts label" x="398" y="470" text-anchor="start">belongs to</text>
+
+<!-- 7. ClaimFiledByPolicyholder: Claim → Policyholder -->
+<line x1="440" y1="260" x2="620" y2="126" class="arr" marker-end="url(#arrow)"/>
+<text class="ts label" x="548" y="178" text-anchor="end">filed by</text>
+
+<!-- 8. PolicyCoversAsset: Policy → InsuredAsset (routed below boxes) -->
+<path d="M630 316 L630 375 L150 375 L150 316" fill="none" class="arr" marker-end="url(#arrow)"/>
+<text class="ts label" x="390" y="367" text-anchor="middle">covers asset</text>
+
+<!-- 9. InspectionForAsset: AssetInspection → InsuredAsset -->
+<line x1="150" y1="510" x2="150" y2="316" class="arr" marker-end="url(#arrow)"/>
+<text class="ts label" x="158" y="420" text-anchor="start">inspects asset</text>
+
+<!-- 10. InspectionAtOffice: AssetInspection → Office (routed left of boxes, inside viewBox) -->
+<path d="M40 538 L15 538 L15 98 L40 98" fill="none" class="arr" marker-end="url(#arrow)"/>
+<text class="ts label" x="7" y="340" text-anchor="end">conducted by</text>
+
+</svg>

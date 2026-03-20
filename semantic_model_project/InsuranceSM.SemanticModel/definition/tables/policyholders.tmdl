@@ -1,0 +1,119 @@
+table policyholders
+	lineageTag: 5d5b3fc3-f5f6-4d85-be8f-a229caa334af
+	sourceLineageTag: [dbo].[policyholders]
+
+	column policyholder_id
+		dataType: string
+		lineageTag: e4f9a515-0f19-4a03-a824-7fa638a36bfb
+		sourceLineageTag: policyholder_id
+		summarizeBy: none
+		sourceColumn: policyholder_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column policyholder_number
+		dataType: string
+		lineageTag: 8a3e60a3-1aa9-4c2f-8d45-f5c7d6dba9cd
+		sourceLineageTag: policyholder_number
+		summarizeBy: none
+		sourceColumn: policyholder_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_name
+		dataType: string
+		lineageTag: 1af70792-03ad-4043-b77a-4e2667a4e72b
+		sourceLineageTag: full_name
+		summarizeBy: none
+		sourceColumn: full_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column policyholder_type
+		dataType: string
+		lineageTag: 40657eeb-338e-4881-9bbd-32b495f6c15f
+		sourceLineageTag: policyholder_type
+		summarizeBy: none
+		sourceColumn: policyholder_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column email
+		dataType: string
+		lineageTag: 02702ae0-7c3e-4eea-b870-ed2eed0198d4
+		sourceLineageTag: email
+		summarizeBy: none
+		sourceColumn: email
+
+		annotation SummarizationSetBy = Automatic
+
+	column phone
+		dataType: string
+		lineageTag: 00111046-8b52-4e2a-8650-9f786d0a6730
+		sourceLineageTag: phone
+		summarizeBy: none
+		sourceColumn: phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column address
+		dataType: string
+		lineageTag: fc66aeae-7fbc-429b-b9da-8342f84fd497
+		sourceLineageTag: address
+		summarizeBy: none
+		sourceColumn: address
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 4679b773-0330-4d35-95c2-0ba6a331abe6
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: 294cee0f-5f6c-4870-9754-a020bf1e3543
+		sourceLineageTag: state
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column zip_code
+		dataType: string
+		lineageTag: 19e031ab-dc45-4105-86cf-778a6e84231e
+		sourceLineageTag: zip_code
+		summarizeBy: none
+		sourceColumn: zip_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_of_birth
+		dataType: string
+		lineageTag: 503d46bc-b254-41f8-a988-a51030721971
+		sourceLineageTag: date_of_birth
+		summarizeBy: none
+		sourceColumn: date_of_birth
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c6f4e0c-53a8-456b-87a8-01dec4a11ef5
+		sourceLineageTag: risk_score
+		summarizeBy: none
+		sourceColumn: risk_score
+
+		annotation SummarizationSetBy = Automatic
+
+	partition policyholders = entity
+		mode: directLake
+		source
+			entityName: policyholders
+			expressionSource: 'DirectLake - lh_insurance'
+

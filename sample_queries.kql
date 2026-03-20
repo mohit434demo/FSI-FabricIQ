@@ -1,0 +1,40 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// Insurance Claims Intelligence — Sample GQL Queries
+// Run these in the Fabric Ontology explorer (Graph Query Language)
+// ─────────────────────────────────────────────────────────────────────────────
+
+// 1. Claims assigned to an adjuster with policy and policyholder details
+MATCH (claim:Claim)-[:ClaimAssignedToAdjuster]->(adj:Adjuster),
+      (claim)-[:ClaimUnderPolicy]->(pol:Policy),
+      (claim)-[:ClaimFiledByPolicyholder]->(ph:Policyholder)
+RETURN
+  claim.claim_number,
+  claim.claim_type,
+  claim.status,
+  claim.estimated_loss,
+  adj.last_name,
+  pol.policy_number,
+  ph.full_name
+
+// 2. Active claims with adjuster and handling office
+MATCH (claim:Claim)-[:ClaimAssignedToAdjuster]->(adj:Adjuster)-[:AdjusterAtOffice]->(office:Office)
+WHERE claim.status IN ("filed", "under_review", "investigation")
+RETURN
+  claim.claim_number,
+  claim.status,
+  claim.priority,
+  claim.estimated_loss,
+  adj.last_name,
+  office.name
+
+// 3. Claims involving a specific insured asset, with policy info
+MATCH (claim:Claim)-[:ClaimInvolvesAsset]->(asset:InsuredAsset),
+      (claim)-[:ClaimUnderPolicy]->(pol:Policy)
+RETURN
+  claim.claim_number,
+  claim.claim_type,
+  claim.status,
+  asset.asset_description,
+  asset.estimated_value,
+  pol.policy_number,
+  pol.coverage_amount

@@ -1,0 +1,113 @@
+// =============================================================================
+// Eventhouse (KQL Database) Table Setup — Insurance Claims
+//
+// Run these commands in your Eventhouse KQL database BEFORE running the
+// 02_generate_events notebook. Execute each .create-merge-table block
+// separately in your KQL queryset.
+//
+// 5 tables — one per event type. The notebook ingests directly via the
+// Kusto Python SDK (no Eventstream needed).
+// =============================================================================
+
+// 1. ClaimStatusEvent — claim lifecycle status transitions
+.create-merge table ClaimStatusEvent (
+    event_id: string,
+    event_type: string,
+    timestamp: datetime,
+    source: string,
+    claim_id: string,
+    claim_number: string,
+    policy_id: string,
+    adjuster_id: string,
+    previous_status: string,
+    new_status: string,
+    priority: string,
+    incident_latitude: real,
+    incident_longitude: real,
+    notes: string
+)
+
+.alter table ClaimStatusEvent policy retention
+```
+{ "SoftDeletePeriod": "365.00:00:00", "Recoverability": "Enabled" }
+```
+
+// 2. FraudAlertEvent — fraud detection and scoring alerts
+.create-merge table FraudAlertEvent (
+    event_id: string,
+    event_type: string,
+    timestamp: datetime,
+    source: string,
+    claim_id: string,
+    policy_id: string,
+    policyholder_id: string,
+    alert_type: string,
+    severity: string,
+    confidence_score: real,
+    description: string,
+    recommended_action: string
+)
+
+// 3. InspectionEvent — field inspection of insured assets
+.create-merge table InspectionEvent (
+    event_id: string,
+    event_type: string,
+    timestamp: datetime,
+    source: string,
+    claim_id: string,
+    asset_id: string,
+    adjuster_id: string,
+    inspection_type: string,
+    result: string,
+    damage_estimate: real,
+    latitude: real,
+    longitude: real,
+    notes: string
+)
+
+// 4. PolicyChangeEvent — policy modifications and endorsements
+.create-merge table PolicyChangeEvent (
+    event_id: string,
+    event_type: string,
+    timestamp: datetime,
+    source: string,
+    policy_id: string,
+    policyholder_id: string,
+    change_type: string,
+    previous_value: string,
+    new_value: string,
+    effective_date: datetime,
+    notes: string
+)
+
+// 5. PaymentEvent — claim payment processing
+.create-merge table PaymentEvent (
+    event_id: string,
+    event_type: string,
+    timestamp: datetime,
+    source: string,
+    claim_id: string,
+    policy_id: string,
+    payee_id: string,
+    payment_type: string,
+    amount: real,
+    currency: string,
+    payment_status: string,
+    payment_method: string,
+    notes: string
+)
+
+// ---------------------------------------------------------------------------
+// Verification queries — run after the notebook generates events
+// ---------------------------------------------------------------------------
+
+// ClaimStatusEvent | count
+// FraudAlertEvent | count
+// InspectionEvent | count
+// PolicyChangeEvent | count
+// PaymentEvent | count
+
+// Sample: latest claim status changes
+// ClaimStatusEvent
+// | summarize arg_max(timestamp, *) by claim_id
+// | project timestamp, claim_id, claim_number, previous_status, new_status, priority

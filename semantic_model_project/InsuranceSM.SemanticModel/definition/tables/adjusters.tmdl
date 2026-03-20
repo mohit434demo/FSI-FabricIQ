@@ -1,0 +1,137 @@
+table adjusters
+	lineageTag: c2aaadc4-de5f-42fd-9dbf-6629187dbe6f
+	sourceLineageTag: [dbo].[adjusters]
+
+	column adjuster_id
+		dataType: string
+		lineageTag: bb1f3380-6af8-4a8a-b6c2-b80a30fa1d35
+		sourceLineageTag: adjuster_id
+		summarizeBy: none
+		sourceColumn: adjuster_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_id
+		dataType: string
+		lineageTag: a96925d7-e967-42fe-8f57-357f472b4721
+		sourceLineageTag: employee_id
+		summarizeBy: none
+		sourceColumn: employee_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		lineageTag: 64e26f6f-6f94-4a83-b247-b3ea0bfe1e50
+		sourceLineageTag: first_name
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		lineageTag: b92fb289-0d36-42f1-a2e5-d3bdbb9706da
+		sourceLineageTag: last_name
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column email
+		dataType: string
+		lineageTag: c6899088-c5d3-48e9-bc5a-215033d63ee9
+		sourceLineageTag: email
+		summarizeBy: none
+		sourceColumn: email
+
+		annotation SummarizationSetBy = Automatic
+
+	column phone
+		dataType: string
+		lineageTag: bbfae366-d469-4587-ad90-93bfc136d1d3
+		sourceLineageTag: phone
+		summarizeBy: none
+		sourceColumn: phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column license_number
+		dataType: string
+		lineageTag: d1565eff-5efc-47d8-ae3d-e306c56e40f5
+		sourceLineageTag: license_number
+		summarizeBy: none
+		sourceColumn: license_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column license_state
+		dataType: string
+		lineageTag: 57713400-c2de-43eb-832f-a7a9c92fbb07
+		sourceLineageTag: license_state
+		summarizeBy: none
+		sourceColumn: license_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column specializations
+		dataType: string
+		lineageTag: 612f0420-a7b8-4394-b35d-36eb758a91ae
+		sourceLineageTag: specializations
+		summarizeBy: none
+		sourceColumn: specializations
+
+		annotation SummarizationSetBy = Automatic
+
+	column hire_date
+		dataType: string
+		lineageTag: 284ae088-93b2-463f-a549-497812d94a20
+		sourceLineageTag: hire_date
+		summarizeBy: none
+		sourceColumn: hire_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: dce7138a-fcdd-4b15-a383-4d15b180ad36
+		sourceLineageTag: status
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column home_office_id
+		dataType: string
+		lineageTag: 26419745-75bc-419b-8d4d-b420114814be
+		sourceLineageTag: home_office_id
+		summarizeBy: none
+		sourceColumn: home_office_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column supervisor_email
+		dataType: string
+		lineageTag: 763e0fa2-5f4c-4b03-ab67-579681ee2e53
+		sourceLineageTag: supervisor_email
+		summarizeBy: none
+		sourceColumn: supervisor_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_active_claims
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a86d775-e203-476f-9d12-3eab70401880
+		sourceLineageTag: max_active_claims
+		summarizeBy: none
+		sourceColumn: max_active_claims
+
+		annotation SummarizationSetBy = Automatic
+
+	partition adjusters = entity
+		mode: directLake
+		source
+			entityName: adjusters
+			expressionSource: 'DirectLake - lh_insurance'
+

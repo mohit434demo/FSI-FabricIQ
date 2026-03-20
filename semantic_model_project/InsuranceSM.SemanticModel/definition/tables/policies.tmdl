@@ -1,0 +1,124 @@
+table policies
+	lineageTag: 6acd9248-344e-4f73-af41-974f6c3e6011
+	sourceLineageTag: [dbo].[policies]
+
+	column policy_id
+		dataType: string
+		lineageTag: 3739e3e7-03ab-4284-9b5a-c6c56aa12220
+		sourceLineageTag: policy_id
+		summarizeBy: none
+		sourceColumn: policy_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column policy_number
+		dataType: string
+		lineageTag: 8edd555c-2d4b-4977-a3d8-b2a3e09e7df2
+		sourceLineageTag: policy_number
+		summarizeBy: none
+		sourceColumn: policy_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column policyholder_id
+		dataType: string
+		lineageTag: 4f73a8e3-d94f-4e9f-ae43-31ed6cff4357
+		sourceLineageTag: policyholder_id
+		summarizeBy: none
+		sourceColumn: policyholder_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column asset_id
+		dataType: string
+		lineageTag: 4245e2ae-dca3-4097-a3ae-16ae37aebd22
+		sourceLineageTag: asset_id
+		summarizeBy: none
+		sourceColumn: asset_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column policy_type
+		dataType: string
+		lineageTag: d18970d6-8c8a-4ecb-b8e8-39f077cf870c
+		sourceLineageTag: policy_type
+		summarizeBy: none
+		sourceColumn: policy_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column coverage_amount
+		dataType: double
+		lineageTag: ebdb4622-d781-4867-943c-02de4c9a1cb8
+		sourceLineageTag: coverage_amount
+		summarizeBy: sum
+		sourceColumn: coverage_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column deductible
+		dataType: double
+		lineageTag: c698a81e-1861-4adf-8526-f04b826abc72
+		sourceLineageTag: deductible
+		summarizeBy: sum
+		sourceColumn: deductible
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column premium_annual
+		dataType: double
+		lineageTag: 7adb43b3-af11-48bf-88c5-228fd124161c
+		sourceLineageTag: premium_annual
+		summarizeBy: sum
+		sourceColumn: premium_annual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column effective_date
+		dataType: string
+		lineageTag: ff6580a9-f16f-49dc-a224-f8b7fe356101
+		sourceLineageTag: effective_date
+		summarizeBy: none
+		sourceColumn: effective_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column expiration_date
+		dataType: string
+		lineageTag: 78d2ad3a-999c-4c95-aed5-d58e884c071c
+		sourceLineageTag: expiration_date
+		summarizeBy: none
+		sourceColumn: expiration_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 3a9db43f-ff41-4ca7-8a1b-442c1daa42fe
+		sourceLineageTag: status
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column underwriter
+		dataType: string
+		lineageTag: 95ad96fb-207a-4a54-a75f-e566b731f884
+		sourceLineageTag: underwriter
+		summarizeBy: none
+		sourceColumn: underwriter
+
+		annotation SummarizationSetBy = Automatic
+
+	partition policies = entity
+		mode: directLake
+		source
+			entityName: policies
+			expressionSource: 'DirectLake - lh_insurance'
+
