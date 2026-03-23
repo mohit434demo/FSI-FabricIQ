@@ -27,10 +27,6 @@ relationship b6bfa370-6acf-4467-85a1-aaf307a16fb0
 	fromColumn: claim_events.adjuster_id
 	toColumn: adjusters.adjuster_id
 
-relationship c2c3c4c5-d6d7-e8e9-f0f1-a2a3a4a5a6a7
-	fromColumn: claims.policyholder_id
-	toColumn: policyholders.policyholder_id
-
 relationship a1a2a3a4-b5b6-c7c8-d9d0-e1e2e3e4e5e6
 	fromColumn: asset_inspections.asset_id
 	toColumn: insured_assets.asset_id
