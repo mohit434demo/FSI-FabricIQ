@@ -304,16 +304,16 @@ def generate_insured_assets(policyholders):
 # ---------------------------------------------------------------------------
 
 ADJUSTER_SPECIALIZATIONS = [
-    ["auto"],
-    ["auto"],
-    ["auto", "liability"],
-    ["property"],
-    ["property", "commercial_property"],
-    ["auto", "property"],
-    ["auto", "property", "liability"],
-    ["commercial_property"],
-    ["liability"],
-    ["auto", "liability"],
+    "auto",
+    "auto",
+    "auto, liability",
+    "property",
+    "property, commercial_property",
+    "auto, property",
+    "auto, property, liability",
+    "commercial_property",
+    "liability",
+    "auto, liability",
 ]
 
 # Map policy_type → which specialization tokens qualify
@@ -366,7 +366,7 @@ def find_matching_adjuster(adjusters, policy_type, exclude_ids=None):
     exclude_ids = exclude_ids or set()
     candidates = [
         a for a in adjusters
-        if needed & set(a["specializations"]) and a["adjuster_id"] not in exclude_ids
+        if needed & {s.strip() for s in a["specializations"].split(",")} and a["adjuster_id"] not in exclude_ids
     ]
     if candidates:
         return random.choice(candidates)
