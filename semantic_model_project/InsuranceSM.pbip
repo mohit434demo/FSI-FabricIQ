@@ -3,6 +3,11 @@
   "version": "1.0",
   "artifacts": [
     {
+      "semanticModel": {
+        "path": "InsuranceSM.SemanticModel"
+      }
+    },
+    {
       "report": {
         "path": "InsuranceSM.Report"
       }
