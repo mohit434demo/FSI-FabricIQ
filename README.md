@@ -144,7 +144,7 @@ sample_queries.kql                 # Example GQL queries for the ontology
 
 ## 5. Prerequisites
 
-- **Fabric workspace** — F16 capacity or higher recommended
+- **Fabric workspace** — F8 capacity or higher recommended
 - **Contributor access** to the target workspace
 - **Preview features** enabled in the Fabric tenant:
   - Ontology
