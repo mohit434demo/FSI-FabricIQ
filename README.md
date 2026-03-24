@@ -310,9 +310,7 @@ Answerable via the Semantic Model (Power BI / DAX), the Ontology (graph traversa
 
 ## 12. Limitations / Future Work
 
-- **Real-time event bindings** — Eventhouse events are not yet bound to the ontology; streaming events and ontology entities operate independently
 - **Data Agent setup** — requires manual configuration in the Fabric portal after ontology creation
-- **Legacy references** — some images in `.imgs/` may still reflect an earlier prototype
 
 ---
 
