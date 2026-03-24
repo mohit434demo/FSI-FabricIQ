@@ -295,7 +295,11 @@ The event generator (`02_generate_events.ipynb`) injects realistic operational s
 
 ## 11. Sample Questions
 
-These queries demonstrate the cross-entity reasoning the solution supports:
+These questions can be answered through:
+
+- the Semantic Model (Power BI / DAX)
+- the Ontology (graph traversal)
+- the Data Agent (natural-language interaction over the ontology)
 
 | Question | What the Ontology Uses |
 |----------|----------------------|
@@ -308,10 +312,33 @@ Answerable via the Semantic Model (Power BI / DAX), the Ontology (graph traversa
 
 ---
 
-## 12. Limitations / Future Work
+## 12. Data Agent (Sample Instructions)
 
 - **Data Agent setup** — requires manual configuration in the Fabric portal after ontology creation
+### Data Agent setup
 
+After running `00_demo_setup.ipynb`, the ontology (`InsuranceOntology_AutoGen`) is ready to be connected to a Fabric **Data Agent** for natural-language querying.
+
+To enable the Data Agent layer:
+
+1. Create a new **Data Agent** in the same workspace
+2. Select **Add data → Ontology**
+3. Choose `InsuranceOntology_AutoGen`
+4. (Optional) Add agent instructions for domain-specific responses
+5. Publish the agent
+
+Once connected, try example prompts like:
+
+- Show claims with the highest risk score
+- List claims by adjuster
+- Which policyholders have multiple claims?
+- Show claims currently under investigation
+- Which policies expire in the next 30 days?
+- Show recent claim events
+
+These demonstrate multi-hop reasoning across claims, policies, assets, adjusters, and offices using natural language.
+
+> Future versions of this repo may include automated Data Agent provisioning once Fabric APIs support agent creation programmatically.
 ---
 
 ## Reference
